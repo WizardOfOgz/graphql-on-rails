@@ -13,12 +13,12 @@ module Types
       result
     end
 
-    field :user, UserType, null: false, description: "Get a user by username." do
+    field :user, UserType, null: true, description: "Get a user by username." do
       argument :username, String, required: true
     end
 
     def user(username:)
-      User.find_by!(username: username)
+      User.find_by(username: username)
     end
 
     field :companies, [CompanyType], null: false, description: "All companies."
