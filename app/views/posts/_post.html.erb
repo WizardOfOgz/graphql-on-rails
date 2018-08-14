@@ -1,0 +1,8 @@
+<article class="post">
+  <p>
+    <%= post.body %>
+    <span class="author">
+      &mdash;<%= link_to(post.user.name, post.user) %> | <%= link_to 'Edit', edit_post_path(post) %>
+    </span>
+  </p>
+</article>

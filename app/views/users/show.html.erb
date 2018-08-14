@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @user.website %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <address><%= @user.address.to_s %></address>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <% if @user.company %><%= link_to(@user.company.name, @user.company) %><% end %>
+</p>
+
+<p>
+  <strong>Posts:</strong>
+  <%= render @user.posts %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
